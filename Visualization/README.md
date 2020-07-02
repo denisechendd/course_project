@@ -13,7 +13,8 @@ For our visualization, our primary data source was created by web scrapping mont
 ### Visualization Elements:
 #### Representation
 The process of creating a visual representation from the information is a significant part in the process of creating an information visualization. Since the information that is being represented may not have any obvious visual manifestation this process of creating mapping from the information to the visual representation can be non-trivial. As part of this project, we tried to create different representations by using a combination of various data variables and abstraction processes. At this point we have already classified our features based on their abstract and physical types and intend to encode them with their appropriate combination of visual variables. Since we have created multiple data visualizations, we have identified two plots and explained their data representation process in detail. <br>
-<img src="images/Representation_1.png" width="80%" height="80%">
+ <br>
+<img src="images/Representation_1.png" width="80%" height="80%"> <br>
 <img src="images/Representation_2.png" width="80%" height="80%">
 
 - Topic Modelling
