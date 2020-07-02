@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif|Roboto" rel="stylesheet">
+
+	<script src="http://romsson.github.io/d3-gridding/build/d3-gridding.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.js"></script>
+	<meta charset="UTF-8">
+	<title>One Hundred People</title>
+	<style type="text/css">
+
+		body {
+			background-color: white;
+			font-family: 'PT Serif', serif;
+		}
+
+		.container {
+			max-width: 1000px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 5px;
+			padding: 1px 10px 10px 10px;
+			background-color: white;
+			box-shadow: 1px 1px 1px 1px #fff;
+		}
+
+		h1 {
+			font-weight: 300;
+			color: darkslategray;
+			font-family: "PT Sans", sans-serif;
+			font-size: 56px;
+			margin-top: 10px;
+			margin-bottom: 0px;
+		}
+
+		h2 {
+			font-weight: 300;
+			color: darkslategray;
+			font-family: "PT Sans", sans-serif;
+			font-size: 32px;
+			margin-bottom: 20px;
+			margin-top: -10px;
+		}
+
+		p {
+			font-size: 18px;
+			margin-top: 4px;
+			margin-bottom: 8px;
+			color: #333;
+		}
+
+		a {
+			color: darkslategray;
+		}
+
+		a:hover {
+			color: darkslategray;
+		}
+
+		.footer {
+			font-size: 14px;
+			margin-top: 0px;
+		}
+
+		.outercontroler{
+			float: left;
+			display: table;
+			width: 100%;
+			height: 20px;
+
+		}
+
+		.controler {
+			display: table-cell;
+			vertical-align: middle;
+			background-color: whitesmoke;
+			font-family: "PT Sans", sans-serif;
+			border: 1px solid gray;
+			border-radius: 6px;
+			padding: 6px;
+		}
+
+		.svganchor {
+			margin: auto;
+			width: 100%;
+		}
+
+		.criterionList {
+			font-size: 12px;
+			color: #222;
+			text-transform: uppercase;
+			cursor: pointer;
+		}
+
+		.chartTitle {
+			font-family: "PT Sans", sans-serif;
+			font-weight: 700;
+			font-size: 22px;
+			color: #444;
+		}
+
+		.chartSubTitle {
+			font-family: "PT Sans", sans-serif;
+			font-size: 18px;
+			color: #444;
+		}
+
+		.nodesData {
+			font-family: 'PT Serif', serif;
+			font-size: 14px;
+		}
+
+		.nodesDataSpan {
+			font-family: 'PT Serif', serif;
+			font-size: 18px;
+			font-weight: 700;
+		}
+
+		.preciseNumberTitle {
+			font-family: "PT Sans", sans-serif;
+			font-size: 12px;
+			color: #444;
+		}
+
+		.nodesDataPrecise {
+			font-family: 'PT Serif', serif;
+			font-size: 12px;
+			color: #444;
+		}
+
+		svg {
+			background-color: white;
+		}
+
+		code[class*="language-"],
+		pre[class*="language-"] {
+			color: #f8f8f2;
+			background: none;
+			text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+			font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+			text-align: left;
+			white-space: pre;
+			word-spacing: normal;
+			word-break: normal;
+			word-wrap: normal;
+			line-height: 1.5;
+
+			-moz-tab-size: 4;
+			-o-tab-size: 4;
+			tab-size: 4;
+
+			-webkit-hyphens: none;
+			-moz-hyphens: none;
+			-ms-hyphens: none;
+			hyphens: none;
+		}
+
+		/* Code blocks */
+		pre[class*="language-"] {
+			padding: 1em;
+			margin: .5em 0;
+			overflow: auto;
+			border-radius: 0.3em;
+		}
+
+		:not(pre) > code[class*="language-"],
+		pre[class*="language-"] {
+			background: #272822;
+		}
+
+		/* Inline code */
+		:not(pre) > code[class*="language-"] {
+			padding: .1em;
+			border-radius: .3em;
+			white-space: normal;
+		}
+
+		.token.comment,
+		.token.prolog,
+		.token.doctype,
+		.token.cdata {
+			color: slategray;
+		}
+
+		.token.punctuation {
+			color: #f8f8f2;
+		}
+
+		.namespace {
+			opacity: .7;
+		}
+
+		.token.property,
+		.token.tag,
+		.token.constant,
+		.token.symbol,
+		.token.deleted {
+			color: #f92672;
+		}
+
+		.token.boolean,
+		.token.number {
+			color: #ae81ff;
+		}
+
+		.token.selector,
+		.token.attr-name,
+		.token.string,
+		.token.char,
+		.token.builtin,
+		.token.inserted {
+			color: #a6e22e;
+		}
+
+		.token.operator,
+		.token.entity,
+		.token.url,
+		.language-css .token.string,
+		.style .token.string,
+		.token.variable {
+			color: #f8f8f2;
+		}
+
+		.token.atrule,
+		.token.attr-value,
+		.token.function {
+			color: #e6db74;
+		}
+
+		.token.keyword {
+			color: #66d9ef;
+		}
+
+		.token.regex,
+		.token.important {
+			color: #fd971f;
+		}
+
+		.token.important,
+		.token.bold {
+			font-weight: bold;
+		}
+		.token.italic {
+			font-style: italic;
+		}
+
+		.token.entity {
+			cursor: help;
+		}
+
+
+	</style>
+	<script src="{{ url_for('static', filename='js/d3.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+
+</head>
+<body>
+<div class="container">
+	<h1>One Hundred People</h1>
+	<h2>A force directed chart</h2>
+	<p>This is a force directed chart where the world’s population is represented as if it was composed by one hundred people, according to different variables that you can change: sex, access to drinkable water, blood type, religion etc. If the world was made of one hundred people, for instance, 84 would be literate, while 16 would be illiterate.</p>
+	<p>Change the variable clicking on the list at the left-hand side. For representing one hundred people with round numbers, I’m using the JavaScript function <em>Math.round()</em>, which rounds to the nearest integer. For having a better representation of the (more) precise numbers, a stacked bar chart is provided at the bottom.</p>
+	<br>
+	<div class="outercontroler">
+		<div class="controler">
+			<p>Click to select:</p>
+		</div>
+	</div>
+
+	<div class="svganchor">
+		<iframe id="iFrame_1" src="first_plot?containername=svg-container&sectionid=0&year=2010" style="width:100%;height:640px"></iframe>
+
+	</div>
+	<br>
+	<p>Source of the data: <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a>, <a href="http://www.wolframalpha.com/">Wolfram Alpha</a> and other sources. Don't take the data to seriously, as I didn’t check the accuracy of some of them.</p>
+	<p class="footer">Created by Gerardo Furtado.</p>
+</div>
+<div class="container">
+	<h1>One Hundred People</h1>
+	<h2>A force directed chart</h2>
+	<p>This is a force directed chart where the world’s population is represented as if it was composed by one hundred people, according to different variables that you can change: sex, access to drinkable water, blood type, religion etc. If the world was made of one hundred people, for instance, 84 would be literate, while 16 would be illiterate.</p>
+	<p>Change the variable clicking on the list at the left-hand side. For representing one hundred people with round numbers, I’m using the JavaScript function <em>Math.round()</em>, which rounds to the nearest integer. For having a better representation of the (more) precise numbers, a stacked bar chart is provided at the bottom.</p>
+	<br>
+	<div class="outercontroler">
+		<div class="controler">
+			<p>Click to select:</p>
+		</div>
+	</div>
+
+	<div class="svganchor">
+		<iframe id="iFrame_2" src="first_plot?containername=svg-container&sectionid=1&year=2010" style="width:100%;height:640px"></iframe>
+
+	</div>
+	<br>
+	<p>Source of the data: <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a>, <a href="http://www.wolframalpha.com/">Wolfram Alpha</a> and other sources. Don't take the data to seriously, as I didn’t check the accuracy of some of them.</p>
+	<p class="footer">Created by Gerardo Furtado.</p>
+</div>
+<div id="container" class="container">
+	<h1>One Hundred People</h1>
+	<h2>A force directed chart</h2>
+	<p>This is a force directed chart where the world’s population is represented as if it was composed by one hundred people, according to different variables that you can change: sex, access to drinkable water, blood type, religion etc. If the world was made of one hundred people, for instance, 84 would be literate, while 16 would be illiterate.</p>
+	<p>Change the variable clicking on the list at the left-hand side. For representing one hundred people with round numbers, I’m using the JavaScript function <em>Math.round()</em>, which rounds to the nearest integer. For having a better representation of the (more) precise numbers, a stacked bar chart is provided at the bottom.</p>
+	<br>
+	<div id="outercontroler" class="outercontroler">
+		<div id="controler" class="controler">
+			<p>Click to select:</p>
+		</div>
+	</div>
+
+	<div id="svganchor" class="svg-container"><br></div>
+	<br>
+	<p>Source of the data: <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a>, <a href="http://www.wolframalpha.com/">Wolfram Alpha</a> and other sources. Don't take the data to seriously, as I didn’t check the accuracy of some of them.</p>
+	<p class="footer">Created by Gerardo Furtado.</p>
+</div>
+<script type="text/javascript">
+const year = {{year|safe}};
+document.getElementById('iFrame_1').src = "first_plot?containername=svg-container&sectionid=0&year="+year;
+document.getElementById('iFrame_2').src = "first_plot?containername=svg-container&sectionid=1&year="+year;
+
+
+	var t_cnt = 200;
+var totalData = JSON.parse('{{ data | tojson | safe}}');
+int_year = parseInt(year)
+totalData = totalData[int_year]
+
+	var keys_of_data = _.map(totalData, 'criterion');
+	var sex =  _.cloneDeep(totalData)
+
+	var male_headPath = "M251.249,127.907c17.7,0,32.781-6.232,45.254-18.7c12.467-12.467,18.699-27.554,18.699-45.253 c0-17.705-6.232-32.783-18.699-45.255C284.029,6.233,268.948,0,251.249,0c-17.705,0-32.79,6.23-45.254,18.699 c-12.465,12.469-18.699,27.55-18.699,45.255c0,17.703,6.23,32.789,18.699,45.253C218.462,121.671,233.549,127.907,251.249,127.907 z";
+
+	var male_bodyPath = "M381.438,153.029c-10.663-10.657-23.599-15.987-38.827-15.987H159.889c-15.23,0-28.171,5.327-38.831,15.987 c-10.657,10.66-15.987,23.604-15.987,38.831v118.776c0,7.611,2.663,14.079,7.993,19.407s11.803,7.994,19.414,7.994 c7.614,0,14.087-2.666,19.417-7.994c5.327-5.328,7.994-11.796,7.994-19.407V210.134h18.271v260.379 c0,8.754,3.144,16.275,9.423,22.559c6.28,6.276,13.796,9.418,22.554,9.418s16.278-3.142,22.557-9.418 c6.28-6.283,9.42-13.802,9.42-22.559V338.038h18.27V470.52c0,8.75,3.141,16.275,9.421,22.552 c6.279,6.283,13.802,9.425,22.556,9.425c8.76,0,16.279-3.142,22.559-9.425c6.283-6.283,9.418-13.798,9.418-22.552V210.134h18.274 v100.495c0,7.618,2.665,14.086,7.994,19.411c5.328,5.331,11.799,7.994,19.41,7.994c7.61,0,14.093-2.663,19.417-7.994 c5.328-5.325,7.994-11.793,7.994-19.411V191.86C397.43,176.63,392.095,163.689,381.438,153.029z";
+
+	var female_headPath = "M 599.52555 250.30106 A 37.375645 36.36549 0 1 1  524.77426,250.30106 A 37.375645 36.36549 0 1 1  599.52555 250.30106 z";
+
+	var female_bodyPath = "M 455.07372,542.23515 L 504.82374,542.23515 L 505.32881,683.40397 C 505.32881,683.40397 506.82147,698.58254 523.78576,698.67183 C 542.7143,698.76651 542.95699,683.40397 542.95699,683.40397 L 543.00163,541.23199 L 554.06867,541.22499 L 554.06867,683.40397 C 554.06867,683.40397 556.02943,698.67183 572.90443,698.67183 C 590.49394,698.66955 592.45447,683.40397 592.45447,683.40397 L 592.26321,542.48768 L 642.20448,542.10888 L 587.78251,354.47304 L 597.00016,354.2205 L 597.00016,354.2205 L 629.95638,463.94832 C 629.95638,463.94832 637.84014,479.2081 651.2706,473.19122 C 664.72428,467.16393 661.27111,453.08918 661.27111,453.08918 L 624.03968,329.25512 C 624.03968,329.25512 617.0271,315.4299 607.33595,308.3904 C 597.6448,301.3509 583.48936,297.52569 583.48936,297.52569 L 514.54645,297.77823 C 514.54645,297.77823 500.38559,300.50044 490.59974,307.50838 C 480.81389,314.51631 473.79311,329.3161 473.79311,329.3161 L 435.99943,451.33674 C 435.99943,451.33674 433.30727,467.64516 448.1287,472.6898 C 463.97862,478.12778 468.82939,461.18573 468.82939,461.18573 L 500.40432,354.59931 L 508.233,354.59931 L 455.07372,542.23515 z ";
+
+	var criterionListData = totalData.map(d => d.criterion);
+
+	var divList = d3.select("#controler");
+
+	// var criterionList = divList.selectAll(".criterionList")
+			//.data(criterionListData)
+			//.enter()
+			//.append("p")
+			//.attr("class", "criterionList");
+
+
+
+
+
+	var element = document.getElementById('outercontroler');
+	var positionInfo = element.getBoundingClientRect();
+	var height = 440;
+	var width = positionInfo.width;
+	// update graphic based on step
+
+
+	var svg = d3.select("#svganchor")
+			.append("svg")
+			.attr("width", width)
+			.attr("height", height)
+			.attr("class","male_female_icons");
+
+	var padding = [10, 10, 10, 10];
+
+	var xScale = d3.scalePoint()
+			.range([padding[3], width - padding[1]])
+			.padding(0.5);
+
+	var barScale = d3.scaleLinear()
+			.range([padding[3], width - padding[1]])
+			.domain([0,100]);
+
+	var colorScale = d3.scaleOrdinal()
+			.range(['#56AAE6','#E75D87','#d95f02','#7570b3','#e7298a','#66a61e']);
+
+
+			//.range(['#E75D87','#d95f02','#7570b3','#e7298a','#66a61e']);
+
+	var dataNodes = d3.range(100).map(() => ({id: "", xPosition:"",class:""}));
+
+	var simulation = d3.forceSimulation()
+			.force("collide", d3.forceCollide(11))
+			.force("x", d3.forceX(d => d.xPosition).strength(0.2))
+			.force("y", d3.forceY(height / 2))
+			.velocityDecay(0.7);
+
+	var chartTitle = svg.append("text")
+			.attr("class", "chartTitle")
+			.attr("x", width / 2)
+			.attr("y", 30)
+			.attr("text-anchor", "middle");
+
+	var chartSubTitle = svg.append("text")
+			.attr("class", "chartSubTitle")
+			.attr("x", width / 2)
+			.attr("y", 54)
+			.attr("text-anchor", "middle");
+
+	var preciseNumberTitle = svg.append("text")
+			.attr("class", "preciseNumberTitle")
+			.attr("y", 380)
+			.attr("x", padding[3])
+			.text("Precise numbers:");
+
+	draw("Sex")
+	function draw(criterion){
+
+		chartTitle.text(criterion);
+
+		var filteredData = totalData.filter(d => d.criterion === criterion);
+
+		chartSubTitle.text(filteredData[0].description);
+
+		xScale.domain(filteredData[0].groups.map(d => d.name));
+
+		colorScale.domain(filteredData[0].groups.map(d => d.name));
+
+		var male_counterData = 0;
+		var female_counterData = totalData[0]["groups"][0]["value"];
+
+		filteredData[0].groups.forEach(d=>{
+			var rounded = Math.round(d.male);
+			for(var i = male_counterData; i < rounded + male_counterData; i++){
+				console.log(i);
+				dataNodes[i].id = d.name;
+				dataNodes[i].xPosition = xScale(d.name);
+				dataNodes[i].class = "male";
+			};
+			male_counterData += rounded;
+			var rounded = Math.round(d.female);
+			for(var i = female_counterData; i < rounded + female_counterData; i++){
+				console.log(i);
+				dataNodes[i].id = d.name;
+				dataNodes[i].xPosition = xScale(d.name);
+				dataNodes[i].class = "female";
+
+			};
+			female_counterData += rounded;
+		});
+
+		var nodes = svg.selectAll(".g")
+				.data(dataNodes)
+				.enter()
+				.append("g")
+				.attr("class",d => d.class)
+				.attr("stroke", "black");
+
+		nodes.attr("fill", d => colorScale(d.id));
+
+		nodes.append("path")
+				.attr("d", function(d ){
+					if (d.class == "male") {return male_headPath}
+					else{return female_headPath}})
+
+
+				.attr("transform",
+						function(d ){
+							if (d.class == "male") {return "translate(-12,0) scale(0.065,0.065)"}
+							else{return "translate(-12,0) scale(0.075,0.075)"}})
+				.attr("stroke-width", 2)
+				.attr("stroke", "black")
+				.attr("stroke-width", 2);
+
+		nodes.append("path")
+				.attr("d",
+						function(d ){
+					if (d.class == "male") {return male_bodyPath}
+					else{return female_bodyPath}})
+				.attr("transform",
+						function(d ){
+							if (d.class == "male") {return "translate(-12,0) scale(0.065,0.065)"}
+							else{return "translate(-12,0) scale(0.075,0.075)"}})
+				.attr("stroke-width", 2);
+
+		var nodesData = svg.selectAll(".nodesData")
+				.data(filteredData[0].groups, d => d.name)
+				.enter()
+				.append("text")
+				.attr("class", "nodesData")
+				.attr("text-anchor", "middle")
+				.attr("y", 100)
+				.attr("x", d => xScale(d.name))
+				.text(d => d.name + ": ")
+				.append("tspan")
+				.attr("class", "nodesDataSpan")
+				.text(d => Math.round(d.value));
+
+		var nodesDataPrecise = svg.selectAll(".nodesDataPrecise")
+				.data(filteredData[0].groups, d => d.name)
+				.enter()
+				.append("text")
+				.attr("class", "nodesDataPrecise")
+				.attr("text-anchor", "middle")
+				.attr("y", 395)
+				.attr("x",
+						d => xScale(d.name))
+				.text(d => d.name + ": " + d.value + "%");
+
+		dataNodes.forEach(d =>{
+			d.x = width / 2;
+			d.y = height / 2;
+		});
+
+		simulation.nodes(dataNodes)
+				.on("tick", tick);
+
+		var bars = svg.selectAll(".bars")
+				.data(filteredData[0].groups);
+
+		var barsEnter = bars.enter()
+				.append("rect")
+				.attr("class", "bars")
+				.attr("y", 424)
+				.attr("x", (d,i) => i ? barScale(filteredData[0].groups[i-1].value) : barScale(0))
+				.attr("height", 20)
+				.attr("width", d => barScale(d.value) - padding[3])
+				.attr("fill", d => colorScale(d.name));
+
+		var polylines = svg.selectAll(".polylines")
+				.data(filteredData[0].groups)
+				.enter()
+				.append("polyline")
+				.attr("class", "polylines")
+				.attr("points", d => "" + xScale(d.name) + ",424 "
+						+ xScale(d.name) + ",400")
+				.attr("stroke-width", 1)
+				.attr("stroke", "darkslategray");
+
+		function tick(){
+			nodes.attr('transform', (d) => {
+				if (d.y < 120) {
+					d.y = 120
+				};
+				if (d.y > 380) {
+					d.y = 380
+				};
+				return 'translate(' + (d.x) + ',' + (d.y) + ')';
+			});
+		};
+
+
+
+
+
+		//end of draw
+	};
+
+	function redraw(criterion){
+
+		chartTitle.text(criterion);
+
+		var filteredData = totalData.filter(d => d.criterion === criterion);
+
+		chartSubTitle.text(filteredData[0].description);
+
+		xScale.domain(filteredData[0].groups.map(d => d.name));
+
+		colorScale.domain(filteredData[0].groups.map(d => d.name));
+
+
+		var male_counterData = 0;
+		var female_counterData = totalData[0]["groups"][0]["value"];
+
+		console.log(dataNodes)
+
+		dataNodes = dataNodes.sort(function(x, y){
+			return d3.descending(x.class, y.class);
+		})
+		filteredData[0].groups.forEach(d=>{
+			var rounded = Math.round(d.male);
+			for(var i = male_counterData; i < rounded + male_counterData; i++){
+				dataNodes[i].id = d.name;
+				dataNodes[i].xPosition = xScale(d.name);
+				dataNodes[i].class = "male";
+			};
+			male_counterData += rounded;
+			var rounded = Math.round(d.female);
+			for(var i = female_counterData; i < rounded + female_counterData; i++){
+				dataNodes[i].id = d.name;
+				dataNodes[i].xPosition = xScale(d.name);
+
+				dataNodes[i].class = "female";
+
+			};
+			female_counterData += rounded;
+		});
+		console.log(dataNodes)
+		dataNodes = dataNodes.sort(function(x, y){
+			return d3.ascending(x.id, y.id);
+		})
+
+		var nodes = svg.selectAll(".g")
+
+		nodes.transition()
+				.duration(500)
+				.attr("fill", d => colorScale(d.id));
+
+		/** nodes.selectAll("path").each(function(d,i){
+				if(dataNodes[d.index].class == "male" && t_cnt%2==0){
+					console.log(d.id,"male head",this.attributes.d,male_headPath,dataNodes[d.index].class)
+					d3.select(this).attr("d",male_headPath).attr("transform", "translate(-12,0) scale(0.045,0.045)");;
+				}
+				else if(dataNodes[d.index].class == "male" && t_cnt%2==1){
+					console.log("male body")
+					d3.select(this).attr("d",male_bodyPath).attr("transform", "translate(-12,0) scale(0.045,0.045)");
+					console.log(d.id,"male body",this.attributes.d,male_bodyPath,dataNodes[d.index].class)
+				}
+				else if(dataNodes[d.index].class == "female" && t_cnt%2==0){
+					console.log(d.id,"female head")
+					d3.select(this).attr("d",female_headPath).attr("transform", "translate(-12,0) scale(0.055,0.055)");
+				}
+				else if(dataNodes[d.index].class == "female" && t_cnt%2==1){
+					console.log(d.id,"female body")
+					d3.select(this).attr("d",female_bodyPath).attr("transform", "translate(-12,0) scale(0.055,0.055)");;
+				}
+				t_cnt = t_cnt -1;
+				var firstChild = this.firstChild,
+						lastChild = this.lastChild;
+
+				//Do stuff with first and last child
+			});
+		 **/
+
+		var newNodesData = svg.selectAll(".nodesData")
+				.data(filteredData[0].groups, d => d.name + d.value);
+
+		var newNodesDataExit = newNodesData.exit()
+				.remove();
+
+		var newNodesDataEnter = newNodesData.enter()
+				.append("text")
+				.attr("class", "nodesData")
+				.attr("text-anchor", "middle")
+				.attr("y", 100)
+				.attr("x", d => xScale(d.name))
+				.text(d => d.name + ": ")
+				.append("tspan")
+				.attr("class", "nodesDataSpan")
+				.text(d => Math.round(d.value));
+
+		var newNodesDataPrecise = svg.selectAll(".nodesDataPrecise")
+				.data(filteredData[0].groups, d => d.name + d.value);
+
+		newNodesDataPrecise.exit()
+				.transition()
+				.delay(750)
+				.duration(10)
+				.remove();
+
+		newNodesDataPrecise.enter()
+				.append("text")
+				.attr("class", "nodesDataPrecise")
+				.attr("text-anchor", "middle")
+				.attr("y", 395)
+				.attr("x", d =>
+						xScale(d.name))
+				.transition()
+				.delay(750)
+				.duration(10)
+				.text(d => d.name + ": " + d.value + "%");
+
+		var bars = svg.selectAll(".bars")
+				.data(filteredData[0].groups);
+
+		var barExit = bars.exit()
+				.transition()
+				.delay(750)
+				.duration(500)
+				.attr("x", width - padding[1])
+				.attr("width", 0)
+				.remove();
+
+		var barsEnter = bars.enter()
+				.append("rect")
+				.attr("class", "bars")
+				.attr("x", width - padding[1])
+				.merge(bars)
+				.attr("y", 424)
+				.attr("height", 20);
+
+		barsEnter.transition()
+				.delay(750)
+				.duration(500)
+				.attr("x", (d,i) =>{
+					if(i === 0){
+						return barScale(0);
+					} else {
+						var counter = 0;
+						for(var j = 0; j < i; j++){
+							counter += filteredData[0].groups[j].value;
+						};
+						return barScale(counter);
+					}
+				})
+				.attr("width", d => barScale(d.value) - padding[3])
+				.attr("fill", d => colorScale(d.name));
+
+		var polylines = svg.selectAll(".polylines")
+				.data(filteredData[0].groups);
+
+		var polylinesExit = polylines.exit()
+				.transition()
+				.delay(750)
+				.duration(500)
+				.attr("points", "" + width + ",424 "
+						+ width + ",412 " + width + ",412 "
+						+ width + ",400")
+				.remove();
+
+		var polylinesEnter = polylines.enter()
+				.append("polyline")
+				.attr("class", "polylines")
+				.attr("points", "" + width + ",424 "
+						+ width + ",412 " + width + ",412 "
+						+ width + ",400")
+				.merge(polylines)
+				.transition()
+				.delay(750)
+				.duration(500)
+				.attr("points", (d,i) =>{
+					if(i === 0){
+						return "" + (barScale(0) + (barScale(filteredData[0].groups[0].value))/2) + ",424 " + (barScale(0) + (barScale(filteredData[0].groups[0].value))/2) + ",412 "
+								+ xScale(d.name) + ",412 " + xScale(d.name) + ",400";
+					} else {
+						var counter = 0;
+						for(var j = 0; j < i; j++){
+							counter += filteredData[0].groups[j].value;
+						};
+						var thisWidth = barScale(counter);
+						return "" + (thisWidth + (barScale(d.value) - padding[3])/2) + ",424 " + (thisWidth + (barScale(d.value) - padding[3])/2) + ",412 " + xScale(d.name) + ",412 " + xScale(d.name) + ",400";
+					}
+				})
+				.attr("stroke-width", 1)
+				.attr("fill", "none")
+				.attr("stroke", "darkslategray");
+
+		setTimeout(function(){
+			simulation.nodes(dataNodes);
+			simulation.alpha(0.8).restart();
+		}, 750)
+
+		//end of redraw
+	}
+
+
+	var select = divList
+			.append('select')
+			.attr('class','select')
+			.on('change',onchange)
+
+	var options = select
+			.selectAll('option')
+			.data(criterionListData).enter()
+			.append('option')
+			.text(function (d) { return d; });
+
+	function onchange() {
+		var selectValue = d3.select('select').property('value');
+
+		if (selectValue == "Continent") {
+			d3.select(".male_female_icons").selectAll("g").remove()
+			d3.select(".male_female_icons").selectAll(".nodesData").remove()
+			d3.select(".male_female_icons").selectAll(".nodesDataPrecise").remove()
+			d3.select(".male_female_icons").selectAll(".polylines").remove()
+			d3.select(".male_female_icons").selectAll(".bars").remove()
+			totalData[0]["groups"] = sex[0]["groups"]
+			dataNodes = d3.range(100).map(() => ({id: "", xPosition:"",class:""}));
+			draw("Sex")
+			redraw(selectValue)
+		}
+		else if (selectValue == "Sex") {
+
+			d3.select(".male_female_icons").selectAll("g").remove()
+			d3.select(".male_female_icons").selectAll(".nodesData").remove()
+			d3.select(".male_female_icons").selectAll(".nodesDataPrecise").remove()
+			d3.select(".male_female_icons").selectAll(".polylines").remove()
+			d3.select(".male_female_icons").selectAll(".bars").remove()
+			totalData[0]["groups"] = sex[0]["groups"]
+			dataNodes = d3.range(100).map(() => ({id: "", xPosition:"",class:""}));
+			draw("Sex")
+			redraw(selectValue)
+		}
+
+		else {
+			d3.select(".male_female_icons").selectAll("g").remove()
+			d3.select(".male_female_icons").selectAll(".nodesData").remove()
+			d3.select(".male_female_icons").selectAll(".nodesDataPrecise").remove()
+			d3.select(".male_female_icons").selectAll(".polylines").remove()
+			d3.select(".male_female_icons").selectAll(".bars").remove()
+			var ind = keys_of_data.indexOf(selectValue)
+			totalData[0]["groups"] = totalData[ind]["groups"]
+			dataNodes = d3.range(100).map(() => ({id: "", xPosition:"",class:""}));
+			draw("Sex")
+			redraw(selectValue)
+		}
+	};
+
+
+
+</script>
+</body>
+</html>

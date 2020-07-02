@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif|Roboto" rel="stylesheet">
+
+	<script src="http://romsson.github.io/d3-gridding/build/d3-gridding.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.js"></script>
+	<meta charset="UTF-8">
+	<title>One Hundred People</title>
+	<style type="text/css">
+
+		body {
+			font-family: 'PT Serif', serif;
+			color: white;
+			text-align: justify;
+		}
+
+		.container {
+			max-width: 1000px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 5px;
+			padding: 1px 10px 10px 10px;
+		}
+
+		h1 {
+			font-weight: 300;
+			color: white;
+			font-family: "King Basil", sans-serif;
+			font-size: 56px;
+			margin-top: 10px;
+			margin-bottom: 0px;
+			 text-shadow: -2px 0 #E75D87, 0 2px #E75D87, 2px 0 #E75D87, 0 -2px #E75D87;
+		}
+		#global_count {
+					font-weight: 300;
+					color: #E75D87;
+					font-family: "King Basil", sans-serif;
+					font-size: 16px;
+					padding-top: 4px;
+					height:40px;
+				}
+
+				#global_count > strong{
+							color: #fff;
+							font-family: "King Basil", sans-serif;
+							font-size: 32px;
+							padding-top: 0px;
+						}
+
+				#global_women_count {
+							font-weight: 300;
+							color: #E75D87;
+							font-family: "King Basil", sans-serif;
+							font-size: 106px;
+							padding-top: 80px;
+							text-shadow: -2px 0 #fff, 0 2px #fff, 2px 0 #fff, 0 -2px #fff;
+							height:190px;
+						}
+
+				#global_text {
+							color: #E75D87;
+							font-family: "King Basil", sans-serif;
+							font-size: 22px;
+							padding-top: 0px;
+						}
+
+						#global_text > strong{
+									color: #fff;
+									font-family: "King Basil", sans-serif;
+									font-size: 32px;
+									padding-top: 0px;
+								}
+
+		h2 {
+			font-weight: 100;
+			color: white;
+			font-family: "PT Sans", sans-serif;
+			font-size: 23px;
+			margin-bottom: 20px;
+			margin-top: -10px;
+		}
+
+		p {
+			font-size: 18px;
+			margin-top: 4px;
+			margin-bottom: 8px;
+			color: white;
+		}
+
+		a {
+			color: white;
+		}
+
+		a:hover {
+			color: white;
+		}
+
+		.footer {
+			font-size: 14px;
+			margin-top: 0px;
+		}
+
+		.outercontroler{
+			float: left;
+			display: table;
+			width: 100%;
+			height: 20px;
+
+		}
+
+		.controler {
+			display: table-cell;
+			vertical-align: middle;
+			font-family: "PT Sans", sans-serif;
+			padding: 6px;
+		}
+
+		.svganchor {
+			margin: auto;
+			width: 100%;
+		}
+
+		.criterionList {
+			font-size: 12px;
+			color:white;
+			text-transform: uppercase;
+			cursor: pointer;
+		}
+
+		.chartTitle {
+			font-family: "King Basil", sans-serif;
+			font-weight: 100;
+			font-size: 22px;
+			fill: #ffffff;
+		}
+
+		.chartSubTitle {
+			font-family: "King Basil", sans-serif;
+			font-size: 18px;
+			fill: #ffffff;
+		}
+
+		.nodesData {
+			font-family: "King Basil", sans-serif;
+			font-size: 14px;
+			fill: #ffffff;
+		}
+
+		.nodesDataSpan {
+			font-family: "King Basil", sans-serif;
+			font-size: 18px;
+			font-weight: 700;
+		}
+
+		.preciseNumberTitle {
+			font-family: "King Basil", sans-serif;
+			font-size: 12px;
+			fill: #ffffff;
+		}
+
+		.nodesDataPrecise {
+			font-family: "King Basil", sans-serif;
+			font-size: 12px;
+			fill: #ffffff;
+		}
+
+		code[class*="language-"],
+		pre[class*="language-"] {
+			fill: #ffffff;
+			background: none;
+			text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+			font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+			text-align: left;
+			white-space: pre;
+			word-spacing: normal;
+			word-break: normal;
+			word-wrap: normal;
+			line-height: 1.5;
+
+			-moz-tab-size: 4;
+			-o-tab-size: 4;
+			tab-size: 4;
+
+			-webkit-hyphens: none;
+			-moz-hyphens: none;
+			-ms-hyphens: none;
+			hyphens: none;
+		}
+
+		/* Code blocks */
+		pre[class*="language-"] {
+			padding: 1em;
+			margin: .5em 0;
+			overflow: auto;
+			border-radius: 0.3em;
+		}
+
+		:not(pre) > code[class*="language-"],
+		pre[class*="language-"] {
+			background: #272822;
+		}
+
+		/* Inline code */
+		:not(pre) > code[class*="language-"] {
+			padding: .1em;
+			border-radius: .3em;
+			white-space: normal;
+		}
+
+		.token.comment,
+		.token.prolog,
+		.token.doctype,
+		.token.cdata {
+			fill: #ffffff;
+		}
+
+		.token.punctuation {
+			fill: #ffffff;
+		}
+
+		.namespace {
+			opacity: .7;
+		}
+
+		.token.property,
+		.token.tag,
+		.token.constant,
+		.token.symbol,
+		.token.deleted {
+			color: white;
+		}
+
+		.token.boolean,
+		.token.number {
+		fill: #ffffff;
+		}
+
+		.token.selector,
+		.token.attr-name,
+		.token.string,
+		.token.char,
+		.token.builtin,
+		.token.inserted {
+			color: white;
+		}
+
+		.token.operator,
+		.token.entity,
+		.token.url,
+		.language-css .token.string,
+		.style .token.string,
+		.token.variable {
+			color: white;
+		}
+
+		.token.atrule,
+		.token.attr-value,
+		.token.function {
+			color: white;
+		}
+
+		.token.keyword {
+			color: white;
+		}
+
+		.token.regex,
+		.token.important {
+			color:white;
+		}
+
+		.token.important,
+		.token.bold {
+			font-weight: bold;
+		}
+		.token.italic {
+			font-style: italic;
+		}
+
+		.token.entity {
+			cursor: help;
+		}
+		iframe{
+			border:none;
+			overflow: hidden;
+		}
+
+		#small_svganchor {
+			width:60%
+		}
+		.home2 {
+		  margin: 0 auto;
+		  width: 50%;
+		  text-align: justify;
+		  display: block;
+		  float: left;
+		  height: 700px;
+		}
+
+		.home2 p {
+		  font-size: 18px;
+		}
+
+
+		.home2_first img {
+		  margin: 0 auto;
+		  padding: 0;
+		}
+
+		.home2_second img {
+		  margin: 0 auto;
+		  padding: 0;
+		}
+
+
+	</style>
+	<script src="{{ url_for('static', filename='js/d3.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+	<link rel="stylesheet" href="static/css/star.css">
+<style>
+#iFrame_4 {
+	height:580px !important;
+}
+#iFrame_2 {
+	height:580px !important;
+	overflow: hidden !important;
+}
+
+
+.bg-container {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 3500px;
+  background: linear-gradient(to bottom, #020107 0%, #201b46 100%);
+}
+</style>
+</head>
+<body>
+	<div class="bg-container">
+	<div class="sky">
+		<div class="stars"></div>
+		<div class="stars1"></div>
+		<div class="stars2"></div>
+		<div class="shooting-stars"></div>
+
+
+	</div>
+
+	<article id="section_0">
+
+
+
+<div class="container">
+	<section class="model-15">
+	  <div class="checkbox">
+	    <input type="checkbox" id="change_page" onclick="change_page();"/>
+	    <label></label>
+	  </div>
+	</section>
+
+	<h1>Who run the world?</h1>
+
+	<h2 id="selected_year">Visualizing the journey of female parliamentarians on global scale (2019)</h2>
+	<div class="logo"><b>An<span>ura</span>g<span> B</span>ejju |</b></div>
+	<div class="logo_2"><b>| Den<span>is</span>e <span>Ch</span>en</b></div>
+	<div class="timeline-container">
+	  <ol class="timeline-slider">
+	    <li class="timeline-slide slide-is-active">
+	      <ol class="timeline">
+	          <li class="timeline__event is-active">
+	            <a class="timeline__event-indicator"></a>
+	            <time class="timeline__event__time">2019</time>
+	          </li>
+	          <li class="timeline__event">
+	            <a class="timeline__event-indicator"></a>
+	            <time class="timeline__event__time">2018</time>
+	          </li>
+	          <li class="timeline__event">
+	            <a class="timeline__event-indicator"></a>
+	            <time class="timeline__event__time">2017</time>
+	          </li>
+	          <li class="timeline__event">
+	            <a class="timeline__event-indicator"></a>
+	            <time class="timeline__event__time">2016</time>
+	          </li>
+	      </ol>
+	    </li>
+	    <li class="timeline-slide slide-exit-right">
+	      <ol class="timeline">
+	          <li class="timeline__event">
+	            <a class="timeline__event-indicator"></a>
+	            <time class="timeline__event__time">2015</time>
+	          </li>
+	          <li class="timeline__event">
+	            <a class="timeline__event-indicator"></a>
+	            <time class="timeline__event__time">2014</time>
+	          </li>
+	          <li class="timeline__event">
+	            <a class="timeline__event-indicator"></a>
+	            <time class="timeline__event__time">2013</time>
+	          </li>
+	          <li class="timeline__event">
+	            <a class="timeline__event-indicator"></a>
+	            <time class="timeline__event__time">2012</time>
+	          </li>
+	      </ol>
+	    </li>
+	    <li class="timeline-slide slide-exit-right">
+	      <ol class="timeline">
+	          <li class="timeline__event">
+	            <a class="timeline__event-indicator"></a>
+	            <time class="timeline__event__time">2011</time>
+	          </li>
+	          <li class="timeline__event">
+	            <a class="timeline__event-indicator"></a>
+	            <time class="timeline__event__time">2010</time>
+	          </li>
+	          <li class="timeline__event">
+	            <a class="timeline__event-indicator"></a>
+	            <time class="timeline__event__time">2009</time>
+	          </li>
+	          <li class="timeline__event">
+	            <a class="timeline__event-indicator"></a>
+	            <time class="timeline__event__time">2008</time>
+	          </li>
+	      </ol>
+	    </li>
+			<li class="timeline-slide slide-exit-right">
+	      <ol class="timeline">
+	          <li class="timeline__event">
+	            <a class="timeline__event-indicator"></a>
+	            <time class="timeline__event__time">2007</time>
+	          </li>
+	          <li class="timeline__event">
+	            <a class="timeline__event-indicator"></a>
+	            <time class="timeline__event__time">2006</time>
+	          </li>
+	          <li class="timeline__event">
+	            <a class="timeline__event-indicator"></a>
+	            <time class="timeline__event__time">2005</time>
+	          </li>
+	          <li class="timeline__event">
+	            <a class="timeline__event-indicator"></a>
+	            <time class="timeline__event__time">2004</time>
+	          </li>
+	      </ol>
+	    </li>
+			<li class="timeline-slide slide-exit-right">
+	      <ol class="timeline">
+	          <li class="timeline__event">
+	            <a class="timeline__event-indicator"></a>
+	            <time class="timeline__event__time">2003</time>
+	          </li>
+	          <li class="timeline__event">
+	            <a class="timeline__event-indicator"></a>
+	            <time class="timeline__event__time">2002</time>
+	          </li>
+	          <li class="timeline__event">
+	            <a class="timeline__event-indicator"></a>
+	            <time class="timeline__event__time">2001</time>
+	          </li>
+	          <li class="timeline__event">
+	            <a class="timeline__event-indicator"></a>
+	            <time class="timeline__event__time">2000</time>
+	          </li>
+	      </ol>
+	    </li>
+
+
+	  </ol>
+
+	  <span class="timeline-pager timeline-pager__previous" href="">previous</span>
+	  <span class="timeline-pager timeline-pager__next">next</span>
+
+	</div>
+
+
+
+	<p>This is a force directed chart where the world’s population is represented as if it was composed by one hundred people, according to different variables that you can change: sex, access to drinkable water, blood type, religion etc. If the world was made of one hundred people, for instance, 84 would be literate, while 16 would be illiterate.</p>
+	<p>Change the variable clicking on the list at the left-hand side. For representing one hundred people with round numbers, I’m using the JavaScript function <em>Math.round()</em>, which rounds to the nearest integer. For having a better representation of the (more) precise numbers, a stacked bar chart is provided at the bottom.</p>
+	<br>
+
+	<div class="outercontroler">
+		<div class="controler" align="right">
+			<p id="sec_0" class="year">Year: 2019</p>
+		</div>
+	</div>
+
+	<div class="svganchor">
+		<iframe id="iFrame_0" style="width:100%;height:600px"  scrolling="no"></iframe></div>
+
+		<br>
+		<p>Source of the data: <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a>, <a href="http://www.wolframalpha.com/">Wolfram Alpha</a> and other sources. Don't take the data to seriously, as I didn’t check the accuracy of some of them.</p>
+		<p class="footer">Created by Gerardo Furtado.</p>
+	</div>
+
+
+
+
+
+</article>
+<article id="section_3">
+<div id="container" class="container">
+	<h1>One Hundred People</h1>
+	<h2>A force directed chart</h2>
+	<p>This is a force directed chart where the world’s population is represented as if it was composed by one hundred people, according to different variables that you can change: sex, access to drinkable water, blood type, religion etc. If the world was made of one hundred people, for instance, 84 would be literate, while 16 would be illiterate.</p>
+	<p>Change the variable clicking on the list at the left-hand side. For representing one hundred people with round numbers, I’m using the JavaScript function <em>Math.round()</em>, which rounds to the nearest integer. For having a better representation of the (more) precise numbers, a stacked bar chart is provided at the bottom.</p>
+	<br>
+	<div id="outercontroler" class="outercontroler">
+		<div id="controler" class="controler">
+			<p id="sec_3"  class="year">Year: 2019</p>
+		</div>
+	</div>
+
+	<div id="svganchor" class="svg-container">
+		<iframe id="iFrame_2" style="width:100%;"  scrolling="no"></iframe>
+</div>
+	<p>Source of the data: <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a>, <a href="http://www.wolframalpha.com/">Wolfram Alpha</a> and other sources. Don't take the data to seriously, as I didn’t check the accuracy of some of them.</p>
+	<p class="footer">Created by Gerardo Furtado.</p>
+</div>
+</article>
+
+	<article id="section_1">
+<div class="container">
+	<h1>One Hundred People</h1>
+	<h2>A force directed chart</h2>
+	<p>This is a force directed chart where the world’s population is represented as if it was composed by one hundred people, according to different variables that you can change: sex, access to drinkable water, blood type, religion etc. If the world was made of one hundred people, for instance, 84 would be literate, while 16 would be illiterate.</p>
+	<p>Change the variable clicking on the list at the left-hand side. For representing one hundred people with round numbers, I’m using the JavaScript function <em>Math.round()</em>, which rounds to the nearest integer. For having a better representation of the (more) precise numbers, a stacked bar chart is provided at the bottom.</p>
+	<br>
+	<div class="tabset">
+		<!-- Tab 1 -->
+		<input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
+		<label  style="background: #E591C2; border: 1.5px solid #E591C2;" class="tab_1" for="tab1">Top 20 countries</label>
+		<!-- Tab 2 -->
+		<input type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
+		<label  style="background: #56AAE6; border: 1.5px solid #56AAE6;" class="tab_2" for="tab2">Bottom 20 countries</label>
+		<div class="tab-panels">
+			<section id="marzen" class="tab-panel">
+				<div class="outercontroler">
+					<div class="controler">
+						<p id="sec_1" class="year" align="right">Year: 2019</p>
+					</div>
+				</div>
+
+				<div class="svganchor">
+					<iframe id="iFrame_1" style="width:100%;height:600px"  scrolling="no"></iframe>
+
+				</div></section>
+			<section id="rauchbier" class="tab-panel">
+				<div class="outercontroler">
+					<div class="controler" align="right">
+						<p id="sec_2" class="year">Year: 2019</p>
+					</div>
+				</div>
+
+				<div class="svganchor">
+					<iframe id="iFrame_4" style="width:100%;height:600px"  scrolling="no"></iframe>
+
+				</div></section>
+			<section id="dunkles" class="tab-panel">
+				<h1>Who run the world?</h1>	</section>
+		</div>
+
+	</div>
+
+
+	<br>
+	<p>Source of the data: <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a>, <a href="http://www.wolframalpha.com/">Wolfram Alpha</a> and other sources. Don't take the data to seriously, as I didn’t check the accuracy of some of them.</p>
+	<p class="footer">Created by Gerardo Furtado.</p>
+</div>
+</article>
+
+
+	</div>
+<script>
+function goTo(selector, timeout, cb) {
+  var $el = $(selector);
+  if (!$el[0]) return;
+  var $par = $el.parent();
+  if ($par.is("body")) $par = $("html, body");
+  setTimeout(() => {
+    $par.stop().animate({scrollTop: $el.offset().top+200}, 1000, cb && cb.call($el[0]));
+  }, timeout || 0);
+}
+
+
+// USE LIKE:
+
+
+</script>
+
+
+<script type="text/javascript">
+
+
+document.getElementById('iFrame_0').src = "d_first_plot";
+document.getElementById('iFrame_2').src = "d_third_plot";
+document.getElementById('iFrame_1').src = "d_second_plot";
+document.getElementById('iFrame_4').src = "d_fourth_plot";
+document.getElementById('iFrame_4').style.height = "700px";
+
+
+
+function change_page()
+{
+  if (document.getElementById('change_page').checked)
+  {
+      console.log("Country_wise")
+  } else {
+      console.log("Date_wise")
+  }
+}
+
+var slide =         $('.timeline-slide');
+var currentSlide =  slide.filter('.slide-is-active');
+var timelineEvent = $('.timeline__event-indicator');
+
+$('.timeline-pager__next').on('click', function() {
+    var nextSlide = currentSlide.next();
+    currentSlide.removeClass('slide-is-active');
+    currentSlide.addClass('slide-exit-left');
+
+    if ( nextSlide.length ) {
+        currentSlide = nextSlide.addClass('slide-is-active');
+        currentSlide.removeClass('slide-exit-right');
+    } else {
+        currentSlide = slide.first().addClass('slide-is-active');
+        currentSlide.removeClass('slide-exit-left');
+        slide.not(currentSlide).addClass('slide-exit-right').removeClass('slide-exit-left');
+    }
+});
+
+
+$('.timeline-pager__previous').on('click', function() {
+    var prevSlide = currentSlide.prev();
+    currentSlide.removeClass('slide-is-active');
+    currentSlide.addClass('slide-exit-right');
+
+    if ( prevSlide.length ) {
+        currentSlide = prevSlide.addClass('slide-is-active');
+        currentSlide.removeClass('slide-exit-left');
+    } else {
+        currentSlide = slide.last().addClass('slide-is-active');
+        currentSlide.removeClass('slide-exit-right');
+        slide.not(currentSlide).addClass('slide-exit-left').removeClass('slide-exit-right');
+    }
+});
+
+
+timelineEvent.on('click', function() {
+
+  timelineEvent.parent().siblings().removeClass('is-active');
+  $(this).parent().addClass('is-active');
+	var year = $(this).siblings().text();
+	var html_text = "Year: " + year;
+	var year_int = parseInt(year);
+	var t_count = m_w_data[year_int]["L_total_seats"];
+	var w_count = m_w_data[year_int]["L_total_women"]
+	$("#sec_0").text(html_text);
+	$("#sec_1").text(html_text);
+	$("#sec_2").text(html_text);
+	$("#sec_3").text(html_text);
+	$("#selected_year").text("Visualizing the journey of female parliamentarians on global scale (" +year+")" );
+$("#global_women_count").text(""+w_count );
+$("#t_count").text(t_count);
+$("#t_year").text(year);
+	update_page(year);
+});
+
+$('.timeline__tooltip-close').on('click', function() {
+  $(this).closest('.timeline__event').removeClass('is-active');
+});
+
+$(document).mouseup(function(e)
+{
+    var timelineTooltip = $('.timeline__tooltip');
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!timelineTooltip.is(e.target) && timelineTooltip.has(e.target).length === 0)
+    {
+        timelineTooltip.parent().removeClass('is-active');
+    }
+});
+
+</script>
+</body>
+</html>

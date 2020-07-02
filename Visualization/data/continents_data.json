@@ -1,0 +1,930 @@
+{
+   "1990": {
+      "Africa": {
+         "L_total_seats": 0.0,
+         "L_total_women": 0.0,
+         "L_percent": 0.0
+      },
+      "Asia": {
+         "L_total_seats": 0.0,
+         "L_total_women": 0.0,
+         "L_percent": 0.0
+      },
+      "Europe": {
+         "L_total_seats": 0.0,
+         "L_total_women": 0.0,
+         "L_percent": 0.0
+      },
+      "North America": {
+         "L_total_seats": 0.0,
+         "L_total_women": 0.0,
+         "L_percent": 0.0
+      },
+      "Oceania": {
+         "L_total_seats": 0.0,
+         "L_total_women": 0.0,
+         "L_percent": 0.0
+      },
+      "South America": {
+         "L_total_seats": 0.0,
+         "L_total_women": 0.0,
+         "L_percent": 0.0
+      }
+   },
+   "1991": {
+      "Africa": {
+         "L_total_seats": 0.0,
+         "L_total_women": 0.0,
+         "L_percent": 0.0
+      },
+      "Asia": {
+         "L_total_seats": 0.0,
+         "L_total_women": 0.0,
+         "L_percent": 0.0
+      },
+      "Europe": {
+         "L_total_seats": 0.0,
+         "L_total_women": 0.0,
+         "L_percent": 0.0
+      },
+      "North America": {
+         "L_total_seats": 0.0,
+         "L_total_women": 0.0,
+         "L_percent": 0.0
+      },
+      "Oceania": {
+         "L_total_seats": 0.0,
+         "L_total_women": 0.0,
+         "L_percent": 0.0
+      },
+      "South America": {
+         "L_total_seats": 0.0,
+         "L_total_women": 0.0,
+         "L_percent": 0.0
+      }
+   },
+   "1992": {
+      "Africa": {
+         "L_total_seats": 422.0,
+         "L_total_women": 27.0,
+         "L_percent": 0.0639810427
+      },
+      "Asia": {
+         "L_total_seats": 0.0,
+         "L_total_women": 0.0,
+         "L_percent": 0.0
+      },
+      "Europe": {
+         "L_total_seats": 0.0,
+         "L_total_women": 0.0,
+         "L_percent": 0.0
+      },
+      "North America": {
+         "L_total_seats": 0.0,
+         "L_total_women": 0.0,
+         "L_percent": 0.0
+      },
+      "Oceania": {
+         "L_total_seats": 0.0,
+         "L_total_women": 0.0,
+         "L_percent": 0.0
+      },
+      "South America": {
+         "L_total_seats": 0.0,
+         "L_total_women": 0.0,
+         "L_percent": 0.0
+      }
+   },
+   "1993": {
+      "Africa": {
+         "L_total_seats": 1121.0,
+         "L_total_women": 84.0,
+         "L_percent": 0.0749330955
+      },
+      "Asia": {
+         "L_total_seats": 120.0,
+         "L_total_women": 7.0,
+         "L_percent": 0.0583333333
+      },
+      "Europe": {
+         "L_total_seats": 78.0,
+         "L_total_women": 8.0,
+         "L_percent": 0.1025641026
+      },
+      "North America": {
+         "L_total_seats": 678.0,
+         "L_total_women": 142.0,
+         "L_percent": 0.209439528
+      },
+      "Oceania": {
+         "L_total_seats": 12.0,
+         "L_total_women": 1.0,
+         "L_percent": 0.0833333333
+      },
+      "South America": {
+         "L_total_seats": 403.0,
+         "L_total_women": 23.0,
+         "L_percent": 0.0570719603
+      }
+   },
+   "1994": {
+      "Africa": {
+         "L_total_seats": 2806.0,
+         "L_total_women": 352.0,
+         "L_percent": 0.125445474
+      },
+      "Asia": {
+         "L_total_seats": 1148.0,
+         "L_total_women": 77.0,
+         "L_percent": 0.0670731707
+      },
+      "Europe": {
+         "L_total_seats": 2578.0,
+         "L_total_women": 531.0,
+         "L_percent": 0.205973623
+      },
+      "North America": {
+         "L_total_seats": 995.0,
+         "L_total_women": 178.0,
+         "L_percent": 0.1788944724
+      },
+      "Oceania": {
+         "L_total_seats": 123.0,
+         "L_total_women": 4.0,
+         "L_percent": 0.0325203252
+      },
+      "South America": {
+         "L_total_seats": 1178.0,
+         "L_total_women": 83.0,
+         "L_percent": 0.0704584041
+      }
+   },
+   "1995": {
+      "Africa": {
+         "L_total_seats": 4612.0,
+         "L_total_women": 479.0,
+         "L_percent": 0.103859497
+      },
+      "Asia": {
+         "L_total_seats": 2365.0,
+         "L_total_women": 177.0,
+         "L_percent": 0.0748414376
+      },
+      "Europe": {
+         "L_total_seats": 5028.0,
+         "L_total_women": 839.0,
+         "L_percent": 0.1668655529
+      },
+      "North America": {
+         "L_total_seats": 1256.0,
+         "L_total_women": 203.0,
+         "L_percent": 0.1616242038
+      },
+      "Oceania": {
+         "L_total_seats": 123.0,
+         "L_total_women": 4.0,
+         "L_percent": 0.0325203252
+      },
+      "South America": {
+         "L_total_seats": 1298.0,
+         "L_total_women": 96.0,
+         "L_percent": 0.0739599384
+      }
+   },
+   "1996": {
+      "Africa": {
+         "L_total_seats": 6048.0,
+         "L_total_women": 602.0,
+         "L_percent": 0.099537037
+      },
+      "Asia": {
+         "L_total_seats": 5056.0,
+         "L_total_women": 334.0,
+         "L_percent": 0.0660601266
+      },
+      "Europe": {
+         "L_total_seats": 7239.0,
+         "L_total_women": 1105.0,
+         "L_percent": 0.152645393
+      },
+      "North America": {
+         "L_total_seats": 1784.0,
+         "L_total_women": 264.0,
+         "L_percent": 0.1479820628
+      },
+      "Oceania": {
+         "L_total_seats": 486.0,
+         "L_total_women": 64.0,
+         "L_percent": 0.1316872428
+      },
+      "South America": {
+         "L_total_seats": 1697.0,
+         "L_total_women": 120.0,
+         "L_percent": 0.070713023
+      }
+   },
+   "1997": {
+      "Africa": {
+         "L_total_seats": 7514.0,
+         "L_total_women": 665.0,
+         "L_percent": 0.0885014639
+      },
+      "Asia": {
+         "L_total_seats": 6787.0,
+         "L_total_women": 541.0,
+         "L_percent": 0.0797112126
+      },
+      "Europe": {
+         "L_total_seats": 9714.0,
+         "L_total_women": 1465.0,
+         "L_percent": 0.1508132592
+      },
+      "North America": {
+         "L_total_seats": 2853.0,
+         "L_total_women": 431.0,
+         "L_percent": 0.1510690501
+      },
+      "Oceania": {
+         "L_total_seats": 662.0,
+         "L_total_women": 67.0,
+         "L_percent": 0.1012084592
+      },
+      "South America": {
+         "L_total_seats": 1883.0,
+         "L_total_women": 209.0,
+         "L_percent": 0.1109930961
+      }
+   },
+   "1998": {
+      "Africa": {
+         "L_total_seats": 7511.0,
+         "L_total_women": 650.0,
+         "L_percent": 0.0865397417
+      },
+      "Asia": {
+         "L_total_seats": 6787.0,
+         "L_total_women": 554.0,
+         "L_percent": 0.0816266392
+      },
+      "Europe": {
+         "L_total_seats": 9666.0,
+         "L_total_women": 1542.0,
+         "L_percent": 0.1595282433
+      },
+      "North America": {
+         "L_total_seats": 2894.0,
+         "L_total_women": 482.0,
+         "L_percent": 0.1665514858
+      },
+      "Oceania": {
+         "L_total_seats": 713.0,
+         "L_total_women": 78.0,
+         "L_percent": 0.1093969144
+      },
+      "South America": {
+         "L_total_seats": 1923.0,
+         "L_total_women": 235.0,
+         "L_percent": 0.1222048882
+      }
+   },
+   "1999": {
+      "Africa": {
+         "L_total_seats": 7899.0,
+         "L_total_women": 713.0,
+         "L_percent": 0.0902645905
+      },
+      "Asia": {
+         "L_total_seats": 6805.0,
+         "L_total_women": 548.0,
+         "L_percent": 0.0805290228
+      },
+      "Europe": {
+         "L_total_seats": 9611.0,
+         "L_total_women": 1596.0,
+         "L_percent": 0.1660597232
+      },
+      "North America": {
+         "L_total_seats": 2926.0,
+         "L_total_women": 481.0,
+         "L_percent": 0.1643882433
+      },
+      "Oceania": {
+         "L_total_seats": 747.0,
+         "L_total_women": 84.0,
+         "L_percent": 0.1124497992
+      },
+      "South America": {
+         "L_total_seats": 1923.0,
+         "L_total_women": 237.0,
+         "L_percent": 0.1232449298
+      }
+   },
+   "2000": {
+      "Africa": {
+         "L_total_seats": 8054.0,
+         "L_total_women": 807.0,
+         "L_percent": 0.1001986591
+      },
+      "Asia": {
+         "L_total_seats": 6611.0,
+         "L_total_women": 576.0,
+         "L_percent": 0.0871275147
+      },
+      "Europe": {
+         "L_total_seats": 9819.0,
+         "L_total_women": 1648.0,
+         "L_percent": 0.1678378654
+      },
+      "North America": {
+         "L_total_seats": 2926.0,
+         "L_total_women": 491.0,
+         "L_percent": 0.1678058783
+      },
+      "Oceania": {
+         "L_total_seats": 747.0,
+         "L_total_women": 84.0,
+         "L_percent": 0.1124497992
+      },
+      "South America": {
+         "L_total_seats": 2042.0,
+         "L_total_women": 224.0,
+         "L_percent": 0.1096963761
+      }
+   },
+   "2001": {
+      "Africa": {
+         "L_total_seats": 7880.0,
+         "L_total_women": 804.0,
+         "L_percent": 0.1020304569
+      },
+      "Asia": {
+         "L_total_seats": 6894.0,
+         "L_total_women": 614.0,
+         "L_percent": 0.0890629533
+      },
+      "Europe": {
+         "L_total_seats": 9804.0,
+         "L_total_women": 1721.0,
+         "L_percent": 0.1755405957
+      },
+      "North America": {
+         "L_total_seats": 2927.0,
+         "L_total_women": 499.0,
+         "L_percent": 0.1704817219
+      },
+      "Oceania": {
+         "L_total_seats": 750.0,
+         "L_total_women": 85.0,
+         "L_percent": 0.1133333333
+      },
+      "South America": {
+         "L_total_seats": 2042.0,
+         "L_total_women": 247.0,
+         "L_percent": 0.1209598433
+      }
+   },
+   "2002": {
+      "Africa": {
+         "L_total_seats": 8306.0,
+         "L_total_women": 980.0,
+         "L_percent": 0.1179869974
+      },
+      "Asia": {
+         "L_total_seats": 7117.0,
+         "L_total_women": 703.0,
+         "L_percent": 0.0987775748
+      },
+      "Europe": {
+         "L_total_seats": 9700.0,
+         "L_total_women": 1752.0,
+         "L_percent": 0.1806185567
+      },
+      "North America": {
+         "L_total_seats": 2929.0,
+         "L_total_women": 513.0,
+         "L_percent": 0.1751451007
+      },
+      "Oceania": {
+         "L_total_seats": 753.0,
+         "L_total_women": 85.0,
+         "L_percent": 0.1128818061
+      },
+      "South America": {
+         "L_total_seats": 1866.0,
+         "L_total_women": 260.0,
+         "L_percent": 0.139335477
+      }
+   },
+   "2003": {
+      "Africa": {
+         "L_total_seats": 9468.0,
+         "L_total_women": 1112.0,
+         "L_percent": 0.1174482467
+      },
+      "Asia": {
+         "L_total_seats": 10909.0,
+         "L_total_women": 1471.0,
+         "L_percent": 0.1348427904
+      },
+      "Europe": {
+         "L_total_seats": 10083.0,
+         "L_total_women": 1822.0,
+         "L_percent": 0.1807001884
+      },
+      "North America": {
+         "L_total_seats": 2985.0,
+         "L_total_women": 605.0,
+         "L_percent": 0.202680067
+      },
+      "Oceania": {
+         "L_total_seats": 754.0,
+         "L_total_women": 85.0,
+         "L_percent": 0.1127320955
+      },
+      "South America": {
+         "L_total_seats": 1866.0,
+         "L_total_women": 265.0,
+         "L_percent": 0.1420150054
+      }
+   },
+   "2004": {
+      "Africa": {
+         "L_total_seats": 9897.0,
+         "L_total_women": 1168.0,
+         "L_percent": 0.1180155603
+      },
+      "Asia": {
+         "L_total_seats": 11194.0,
+         "L_total_women": 1523.0,
+         "L_percent": 0.1360550295
+      },
+      "Europe": {
+         "L_total_seats": 9879.0,
+         "L_total_women": 1850.0,
+         "L_percent": 0.1872659176
+      },
+      "North America": {
+         "L_total_seats": 2999.0,
+         "L_total_women": 619.0,
+         "L_percent": 0.206402134
+      },
+      "Oceania": {
+         "L_total_seats": 754.0,
+         "L_total_women": 85.0,
+         "L_percent": 0.1127320955
+      },
+      "South America": {
+         "L_total_seats": 2026.0,
+         "L_total_women": 253.0,
+         "L_percent": 0.1248766041
+      }
+   },
+   "2005": {
+      "Africa": {
+         "L_total_seats": 10469.0,
+         "L_total_women": 1510.0,
+         "L_percent": 0.1442353615
+      },
+      "Asia": {
+         "L_total_seats": 11568.0,
+         "L_total_women": 1665.0,
+         "L_percent": 0.1439315353
+      },
+      "Europe": {
+         "L_total_seats": 10083.0,
+         "L_total_women": 1940.0,
+         "L_percent": 0.1924030546
+      },
+      "North America": {
+         "L_total_seats": 2999.0,
+         "L_total_women": 640.0,
+         "L_percent": 0.2134044682
+      },
+      "Oceania": {
+         "L_total_seats": 768.0,
+         "L_total_women": 90.0,
+         "L_percent": 0.1171875
+      },
+      "South America": {
+         "L_total_seats": 1867.0,
+         "L_total_women": 297.0,
+         "L_percent": 0.1590787359
+      }
+   },
+   "2006": {
+      "Africa": {
+         "L_total_seats": 10392.0,
+         "L_total_women": 1493.0,
+         "L_percent": 0.1436682063
+      },
+      "Asia": {
+         "L_total_seats": 11475.0,
+         "L_total_women": 1663.0,
+         "L_percent": 0.1449237473
+      },
+      "Europe": {
+         "L_total_seats": 10038.0,
+         "L_total_women": 2018.0,
+         "L_percent": 0.201036063
+      },
+      "North America": {
+         "L_total_seats": 3042.0,
+         "L_total_women": 661.0,
+         "L_percent": 0.2172912558
+      },
+      "Oceania": {
+         "L_total_seats": 768.0,
+         "L_total_women": 91.0,
+         "L_percent": 0.1184895833
+      },
+      "South America": {
+         "L_total_seats": 1872.0,
+         "L_total_women": 332.0,
+         "L_percent": 0.1773504274
+      }
+   },
+   "2007": {
+      "Africa": {
+         "L_total_seats": 10021.0,
+         "L_total_women": 1527.0,
+         "L_percent": 0.152380002
+      },
+      "Asia": {
+         "L_total_seats": 11882.0,
+         "L_total_women": 1810.0,
+         "L_percent": 0.1523312574
+      },
+      "Europe": {
+         "L_total_seats": 10037.0,
+         "L_total_women": 2136.0,
+         "L_percent": 0.2128125934
+      },
+      "North America": {
+         "L_total_seats": 3048.0,
+         "L_total_women": 669.0,
+         "L_percent": 0.219488189
+      },
+      "Oceania": {
+         "L_total_seats": 772.0,
+         "L_total_women": 95.0,
+         "L_percent": 0.1230569948
+      },
+      "South America": {
+         "L_total_seats": 1870.0,
+         "L_total_women": 341.0,
+         "L_percent": 0.1823529412
+      }
+   },
+   "2008": {
+      "Africa": {
+         "L_total_seats": 9706.0,
+         "L_total_women": 1588.0,
+         "L_percent": 0.1636101381
+      },
+      "Asia": {
+         "L_total_seats": 12171.0,
+         "L_total_women": 2074.0,
+         "L_percent": 0.1704050612
+      },
+      "Europe": {
+         "L_total_seats": 9945.0,
+         "L_total_women": 2149.0,
+         "L_percent": 0.2160884867
+      },
+      "North America": {
+         "L_total_seats": 3055.0,
+         "L_total_women": 717.0,
+         "L_percent": 0.2346972177
+      },
+      "Oceania": {
+         "L_total_seats": 776.0,
+         "L_total_women": 97.0,
+         "L_percent": 0.125
+      },
+      "South America": {
+         "L_total_seats": 1870.0,
+         "L_total_women": 344.0,
+         "L_percent": 0.1839572193
+      }
+   },
+   "2009": {
+      "Africa": {
+         "L_total_seats": 9732.0,
+         "L_total_women": 1674.0,
+         "L_percent": 0.1720098644
+      },
+      "Asia": {
+         "L_total_seats": 12238.0,
+         "L_total_women": 2123.0,
+         "L_percent": 0.1734760582
+      },
+      "Europe": {
+         "L_total_seats": 9953.0,
+         "L_total_women": 2203.0,
+         "L_percent": 0.2213402994
+      },
+      "North America": {
+         "L_total_seats": 3045.0,
+         "L_total_women": 730.0,
+         "L_percent": 0.2397372742
+      },
+      "Oceania": {
+         "L_total_seats": 776.0,
+         "L_total_women": 97.0,
+         "L_percent": 0.125
+      },
+      "South America": {
+         "L_total_seats": 1896.0,
+         "L_total_women": 364.0,
+         "L_percent": 0.1919831224
+      }
+   },
+   "2010": {
+      "Africa": {
+         "L_total_seats": 9953.0,
+         "L_total_women": 1850.0,
+         "L_percent": 0.1858736059
+      },
+      "Asia": {
+         "L_total_seats": 12667.0,
+         "L_total_women": 2167.0,
+         "L_percent": 0.1710744454
+      },
+      "Europe": {
+         "L_total_seats": 9959.0,
+         "L_total_women": 2214.0,
+         "L_percent": 0.2223114771
+      },
+      "North America": {
+         "L_total_seats": 2969.0,
+         "L_total_women": 731.0,
+         "L_percent": 0.2462108454
+      },
+      "Oceania": {
+         "L_total_seats": 770.0,
+         "L_total_women": 92.0,
+         "L_percent": 0.1194805195
+      },
+      "South America": {
+         "L_total_seats": 1895.0,
+         "L_total_women": 361.0,
+         "L_percent": 0.1905013193
+      }
+   },
+   "2011": {
+      "Africa": {
+         "L_total_seats": 10508.0,
+         "L_total_women": 1980.0,
+         "L_percent": 0.1884278645
+      },
+      "Asia": {
+         "L_total_seats": 12714.0,
+         "L_total_women": 2177.0,
+         "L_percent": 0.1712285669
+      },
+      "Europe": {
+         "L_total_seats": 9959.0,
+         "L_total_women": 2287.0,
+         "L_percent": 0.2296415303
+      },
+      "North America": {
+         "L_total_seats": 2971.0,
+         "L_total_women": 760.0,
+         "L_percent": 0.2558061259
+      },
+      "Oceania": {
+         "L_total_seats": 769.0,
+         "L_total_women": 90.0,
+         "L_percent": 0.1170351105
+      },
+      "South America": {
+         "L_total_seats": 1902.0,
+         "L_total_women": 353.0,
+         "L_percent": 0.1855941115
+      }
+   },
+   "2012": {
+      "Africa": {
+         "L_total_seats": 10109.0,
+         "L_total_women": 2130.0,
+         "L_percent": 0.2107033337
+      },
+      "Asia": {
+         "L_total_seats": 12713.0,
+         "L_total_women": 2184.0,
+         "L_percent": 0.1717926532
+      },
+      "Europe": {
+         "L_total_seats": 10042.0,
+         "L_total_women": 2417.0,
+         "L_percent": 0.2406891058
+      },
+      "North America": {
+         "L_total_seats": 2967.0,
+         "L_total_women": 818.0,
+         "L_percent": 0.2756993596
+      },
+      "Oceania": {
+         "L_total_seats": 771.0,
+         "L_total_women": 90.0,
+         "L_percent": 0.1167315175
+      },
+      "South America": {
+         "L_total_seats": 1902.0,
+         "L_total_women": 353.0,
+         "L_percent": 0.1855941115
+      }
+   },
+   "2013": {
+      "Africa": {
+         "L_total_seats": 10236.0,
+         "L_total_women": 2280.0,
+         "L_percent": 0.2227432591
+      },
+      "Asia": {
+         "L_total_seats": 12735.0,
+         "L_total_women": 2284.0,
+         "L_percent": 0.1793482528
+      },
+      "Europe": {
+         "L_total_seats": 10053.0,
+         "L_total_women": 2528.0,
+         "L_percent": 0.2514672237
+      },
+      "North America": {
+         "L_total_seats": 2965.0,
+         "L_total_women": 867.0,
+         "L_percent": 0.2924114671
+      },
+      "Oceania": {
+         "L_total_seats": 772.0,
+         "L_total_women": 93.0,
+         "L_percent": 0.1204663212
+      },
+      "South America": {
+         "L_total_seats": 1915.0,
+         "L_total_women": 370.0,
+         "L_percent": 0.1932114883
+      }
+   },
+   "2014": {
+      "Africa": {
+         "L_total_seats": 10252.0,
+         "L_total_women": 2293.0,
+         "L_percent": 0.2236636754
+      },
+      "Asia": {
+         "L_total_seats": 12434.0,
+         "L_total_women": 2225.0,
+         "L_percent": 0.1789448287
+      },
+      "Europe": {
+         "L_total_seats": 9841.0,
+         "L_total_women": 2509.0,
+         "L_percent": 0.2549537649
+      },
+      "North America": {
+         "L_total_seats": 2955.0,
+         "L_total_women": 878.0,
+         "L_percent": 0.2971235195
+      },
+      "Oceania": {
+         "L_total_seats": 752.0,
+         "L_total_women": 94.0,
+         "L_percent": 0.125
+      },
+      "South America": {
+         "L_total_seats": 1915.0,
+         "L_total_women": 428.0,
+         "L_percent": 0.2234986945
+      }
+   },
+   "2015": {
+      "Africa": {
+         "L_total_seats": 10365.0,
+         "L_total_women": 2454.0,
+         "L_percent": 0.2367583213
+      },
+      "Asia": {
+         "L_total_seats": 12434.0,
+         "L_total_women": 2255.0,
+         "L_percent": 0.181357568
+      },
+      "Europe": {
+         "L_total_seats": 9840.0,
+         "L_total_women": 2579.0,
+         "L_percent": 0.2620934959
+      },
+      "North America": {
+         "L_total_seats": 3060.0,
+         "L_total_women": 925.0,
+         "L_percent": 0.3022875817
+      },
+      "Oceania": {
+         "L_total_seats": 752.0,
+         "L_total_women": 96.0,
+         "L_percent": 0.1276595745
+      },
+      "South America": {
+         "L_total_seats": 1919.0,
+         "L_total_women": 430.0,
+         "L_percent": 0.2240750391
+      }
+   },
+   "2016": {
+      "Africa": {
+         "L_total_seats": 10559.0,
+         "L_total_women": 2548.0,
+         "L_percent": 0.2413107302
+      },
+      "Asia": {
+         "L_total_seats": 12447.0,
+         "L_total_women": 2298.0,
+         "L_percent": 0.1846228007
+      },
+      "Europe": {
+         "L_total_seats": 9872.0,
+         "L_total_women": 2686.0,
+         "L_percent": 0.272082658
+      },
+      "North America": {
+         "L_total_seats": 3065.0,
+         "L_total_women": 945.0,
+         "L_percent": 0.308319739
+      },
+      "Oceania": {
+         "L_total_seats": 753.0,
+         "L_total_women": 105.0,
+         "L_percent": 0.1394422311
+      },
+      "South America": {
+         "L_total_seats": 1919.0,
+         "L_total_women": 438.0,
+         "L_percent": 0.228243877
+      }
+   },
+   "2017": {
+      "Africa": {
+         "L_total_seats": 10594.0,
+         "L_total_women": 2543.0,
+         "L_percent": 0.2400415329
+      },
+      "Asia": {
+         "L_total_seats": 12117.0,
+         "L_total_women": 2211.0,
+         "L_percent": 0.1824709086
+      },
+      "Europe": {
+         "L_total_seats": 9921.0,
+         "L_total_women": 2785.0,
+         "L_percent": 0.2807176696
+      },
+      "North America": {
+         "L_total_seats": 3066.0,
+         "L_total_women": 939.0,
+         "L_percent": 0.3062622309
+      },
+      "Oceania": {
+         "L_total_seats": 747.0,
+         "L_total_women": 114.0,
+         "L_percent": 0.1526104418
+      },
+      "South America": {
+         "L_total_seats": 1954.0,
+         "L_total_women": 459.0,
+         "L_percent": 0.2349027636
+      }
+   },
+   "2018": {
+      "Africa": {
+         "L_total_seats": 11014.0,
+         "L_total_women": 2559.0,
+         "L_percent": 0.2323406573
+      },
+      "Asia": {
+         "L_total_seats": 11659.0,
+         "L_total_women": 2208.0,
+         "L_percent": 0.1893815936
+      },
+      "Europe": {
+         "L_total_seats": 9967.0,
+         "L_total_women": 2845.0,
+         "L_percent": 0.2854419585
+      },
+      "North America": {
+         "L_total_seats": 3062.0,
+         "L_total_women": 1020.0,
+         "L_percent": 0.3331156107
+      },
+      "Oceania": {
+         "L_total_seats": 748.0,
+         "L_total_women": 117.0,
+         "L_percent": 0.1564171123
+      },
+      "South America": {
+         "L_total_seats": 1959.0,
+         "L_total_women": 481.0,
+         "L_percent": 0.2455334354
+      }
+   }
+}

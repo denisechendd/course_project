@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif|Roboto" rel="stylesheet">
+
+
+	<script src="http://romsson.github.io/d3-gridding/build/d3-gridding.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.js"></script>
+	<meta charset="UTF-8">
+	<title>One Hundred People</title>
+	<style type="text/css">
+	@font-face {
+	  font-family: "King Basil";
+	  src: url("./static/css/font/King-Basil.ttf");
+	}
+
+
+		body {
+			font-family: "King Basil", sans-serif;
+		}
+
+		.container {
+			max-width: 1000px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 5px;
+			padding: 1px 10px 10px 10px;
+			box-shadow: 1px 1px 1px 1px #fff;
+		}
+
+		h1 {
+			font-weight: 300;
+			color: darkslategray;
+			font-family: "King Basil", sans-serif;
+			font-size: 56px;
+			margin-top: 10px;
+			margin-bottom: 0px;
+		}
+
+		h2 {
+			font-weight: 300;
+			color: darkslategray;
+			font-family: "King Basil", sans-serif;
+			font-size: 32px;
+			margin-bottom: 20px;
+			margin-top: -10px;
+		}
+
+		p {
+			font-size: 18px;
+			margin-top: 4px;
+			margin-bottom: 8px;
+			color: #333;
+		}
+
+		a {
+			color: darkslategray;
+		}
+
+		a:hover {
+			color: darkslategray;
+		}
+
+		.footer {
+			font-size: 14px;
+			margin-top: 0px;
+		}
+
+		.outercontroler{
+			float: left;
+			display: table;
+			width: 100%;
+			height: 20px;
+
+		}
+
+		.controler {
+			display: table-cell;
+			vertical-align: middle;
+			font-family: "King Basil", sans-serif;
+			border: 1px solid gray;
+			border-radius: 6px;
+			padding: 6px;
+		}
+
+		.svganchor {
+			margin: auto;
+			width: 100%;
+		}
+
+		.criterionList {
+			font-size: 12px;
+			color: #222;
+			text-transform: uppercase;
+			cursor: pointer;
+		}
+
+		.chartTitle {
+			font-family: "King Basil", sans-serif;
+			font-weight: 700;
+			font-size: 22px;
+			color: #444;
+		}
+
+		.chartSubTitle {
+			font-family: "King Basil", sans-serif;
+			font-size: 18px;
+			color: #444;
+		}
+
+		.nodesData {
+			font-family: 'PT Serif', serif;
+			font-size: 14px;
+		}
+
+		.nodesDataSpan {
+			font-family: 'PT Serif', serif;
+			font-size: 18px;
+			font-weight: 700;
+		}
+
+		.preciseNumberTitle {
+			font-family: "King Basil", sans-serif;
+			font-size: 12px;
+			color: #444;
+		}
+
+		.nodesDataPrecise {
+			font-family: 'PT Serif', serif;
+			font-size: 12px;
+			color: #444;
+		}
+
+		code[class*="language-"],
+		pre[class*="language-"] {
+			color: #f8f8f2;
+			background: none;
+			text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+			font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+			text-align: left;
+			white-space: pre;
+			word-spacing: normal;
+			word-break: normal;
+			word-wrap: normal;
+			line-height: 1.5;
+
+			-moz-tab-size: 4;
+			-o-tab-size: 4;
+			tab-size: 4;
+
+			-webkit-hyphens: none;
+			-moz-hyphens: none;
+			-ms-hyphens: none;
+			hyphens: none;
+		}
+
+		/* Code blocks */
+		pre[class*="language-"] {
+			padding: 1em;
+			margin: .5em 0;
+			overflow: auto;
+			border-radius: 0.3em;
+		}
+
+		:not(pre) > code[class*="language-"],
+		pre[class*="language-"] {
+			background: #272822;
+		}
+
+		/* Inline code */
+		:not(pre) > code[class*="language-"] {
+			padding: .1em;
+			border-radius: .3em;
+			white-space: normal;
+		}
+
+		.token.comment,
+		.token.prolog,
+		.token.doctype,
+		.token.cdata {
+			color: slategray;
+		}
+
+		.token.punctuation {
+			color: #f8f8f2;
+		}
+
+		.namespace {
+			opacity: .7;
+		}
+
+		.token.property,
+		.token.tag,
+		.token.constant,
+		.token.symbol,
+		.token.deleted {
+			color: #f92672;
+		}
+
+		.token.boolean,
+		.token.number {
+			color: #ae81ff;
+		}
+
+		.token.selector,
+		.token.attr-name,
+		.token.string,
+		.token.char,
+		.token.builtin,
+		.token.inserted {
+			color: #a6e22e;
+		}
+
+		.token.operator,
+		.token.entity,
+		.token.url,
+		.language-css .token.string,
+		.style .token.string,
+		.token.variable {
+			color: #f8f8f2;
+		}
+
+		.token.atrule,
+		.token.attr-value,
+		.token.function {
+			color: #e6db74;
+		}
+
+		.token.keyword {
+			color: #66d9ef;
+		}
+
+		.token.regex,
+		.token.important {
+			color: #fd971f;
+		}
+
+		.token.important,
+		.token.bold {
+			font-weight: bold;
+		}
+		.token.italic {
+			font-style: italic;
+		}
+
+		.token.entity {
+			cursor: help;
+		}
+
+		svg {
+			color:#FFFFFF;
+		}
+
+
+		.hidden {
+		  display: none;
+		}
+		div.tooltip {
+			font-family: "PT Sans", sans-serif;
+			font-size:14px;
+		  color: #fff;
+		  background: #000;
+		  border-radius: 3px;
+		  border: 1px solid #fff;
+		  padding: .2em;
+		  opacity: 0.9;
+		  position: absolute;}
+
+		.label {
+		  color: #FFFFFF;
+		}
+
+	</style>
+	<script src="{{ url_for('static', filename='js/d3.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/main2.js') }}"></script>
+</head>
+<body>
+	<div class="svganchor">
+		<div class="svg-container">	</div>
+		<div class="tooltip"></div>
+
+	</div>
+
+<script>
+	const urlParams = new URLSearchParams(window.location.search);
+	const containername = urlParams.get('containername');
+	const sectionid = urlParams.get('sectionid');
+	const year = urlParams.get('year');
+	var tooltip = d3.select("div.tooltip");
+	var data = JSON.parse('{{ data | tojson | safe}}');
+	loadData(data,containername,sectionid,year,tooltip);</script>
+
+</body>
+</html>

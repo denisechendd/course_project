@@ -1,0 +1,57 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  background-color: none;
+  width: 860px;
+  height: 600px;
+  margin-top: 10px;
+  color: #fff;
+}
+
+#main {
+  float: left;
+  width: 550px;
+}
+
+#sidebar {
+  float: left;
+  width: 40px;
+  padding-left:40px;
+}
+
+#sequence {
+  width: 600px;
+  height: 70px;
+}
+
+#legend {
+  padding: 10px 0 0 3px;
+}
+
+#sequence text, #legend text {
+  font-weight: 600;
+  fill: #fff;
+}
+
+#chart {
+  position: relative;
+}
+
+#chart path {
+  stroke: #fff;
+}
+
+#explanation {
+  position: absolute;
+  top: 260px;
+  left: 305px;
+  width: 140px;
+  text-align: center;
+  color: #fff;
+  z-index: -1;
+}
+
+#percentage {
+  font-size: 2.5em;
+}
