@@ -17,24 +17,27 @@ The process of creating a visual representation from the information is a signif
 <img src="images/Representation_1.png" width="80%" height="80%"> <br>
 <img src="images/Representation_2.png" width="80%" height="80%">
 
-- Topic Modelling
-- Sentiment analysis
-- Entity Resolution
-- Visualizing Word2Vec Word Embeddings using t-SNE
-- Twitter Visualization
+#### Presentation
+While designing a presentation of the above represented data (i.e spatial and temporal layout) – we have considered three principal resources for beneficial exploitation by an interaction designer. These three resources are: display space (ranging from that of a mobile to the vast area of a wall display), time available (to perform the task that the presentation is designed for) and characteristics of the human user. Below are two plots that explains our thought process for data presentation in detail. <br>
  <br>
+<img src="images/presentation_1.png" width="80%" height="80%"> <br>
+<img src="images/presentation_1.png" width="80%" height="80%">
 
-**3. Feature Extraction and Engineering:**
-- N-gram model
-- Words Embedding
-- Documents Embedding
+#### Interaction
+Interactive data visualization enables direct actions on a plot to change elements and link between multiple plots. In our project we have added multiple interactive elements in order to make it <br>
  <br>
+<img src="images/Interaction_1.png" width="80%" height="80%"> <br>
+<img src="images/Interaction_2.png" width="80%" height="80%"> <br>
+<img src="images/presentation_3.png" width="80%" height="80%">
 
-**4. Predictive modeling:**
-- Baseline model
-  - Naive Bayes model
-  - Random Forest (RF)
-  - Support Vector Machine (SVM)
-- Deep Learning model
-  - Binary Classification
-  - Regression
+#### Exploratory Data analysis and Tasks
+For this project we have used the suggestions presented Amar et al. to create our data tasks. They proposed a set of ten low-level analysis tasks that describe users’ activities while using visualization tools to understand their data. Using this as a reference, we have performed some initial exploratory work to get a better sense of the given dataset.<br>
+ <br>
+<img src="images/EDA_1.png" width="80%" height="80%"> <br>
+<img src="images/EDA_2.png" width="80%" height="80%"> <br>
+<img src="images/EDA_3.png" width="80%" height="80%"> <br>
+<img src="images/EDA_4.png" width="80%" height="80%"> <br>
+<img src="images/EDA_5.png" width="80%" height="80%">
+
+### Youtube Video
+[Video Link](https://youtu.be/L3XZHmBvLTw)
