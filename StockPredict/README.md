@@ -29,5 +29,5 @@ Specifically, we perform topic modeling on news articles to discover the general
   - Binary Classification
   - Regression
 
-  ### Youtube Video
-  [Video Link](https://youtu.be/b5wkez0ENVk)
+### Youtube Video
+[Video Link](https://youtu.be/b5wkez0ENVk)
