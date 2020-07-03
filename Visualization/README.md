@@ -28,7 +28,7 @@ Interactive data visualization enables direct actions on a plot to change elemen
  <br>
 <img src="images/Interaction_1.png" width="80%" height="80%"> <br>
 <img src="images/Interaction_2.png" width="80%" height="80%"> <br>
-<img src="images/presentation_3.png" width="80%" height="80%">
+<img src="images/Interaction_3.png" width="80%" height="80%">
 
 #### Exploratory Data analysis and Tasks
 For this project we have used the suggestions presented Amar et al. to create our data tasks. They proposed a set of ten low-level analysis tasks that describe users’ activities while using visualization tools to understand their data. Using this as a reference, we have performed some initial exploratory work to get a better sense of the given dataset.<br>
